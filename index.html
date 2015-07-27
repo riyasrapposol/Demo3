@@ -1,25 +1,58 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="">
   <head>
-    <meta charset="UTF-8">
-    <title>Demo3 by riyasrapposol</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A simple example of push notifications working in a Service Worker">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <title>Push Demo</title>
+    <!-- Roboto and Roboto Condensed Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles/h5bp.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <!-- Include the Web Manifest - Contains the gcm_sender_id -->
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Demo3</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/riyasrapposol/Demo3" class="btn">View on GitHub</a>
-      <a href="https://github.com/riyasrapposol/Demo3/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/riyasrapposol/Demo3/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
 
-    Test page
-  
+    <header>
+      <h1>Push Demo</h1>
+    </header>
+
+    <main>
+      <section class="button-container">
+
+        <div class="button-group" id="notification-permission">
+          <p><span>1</span>Enable notifications</p>
+          <button disabled>Request Notifcation Permissions</button>
+        </div>
+
+        <div class="button-group disabled" id="push-permission">
+          <p><span>2</span>Enable push for this site</p>
+          <button disabled>Request Push Permissions</button>
+        </div>
+
+        <div class="button-group disabled" id="request-push">
+          <p><span>3</span>Send yourself a push message</p>
+          <input type="text" class="title" placeholder="Title" />
+          <input type="text" class="message" placeholder="Message" />
+          <button disabled>Request a Push to Yourself</button>
+        </div>
+
+        <div class="button-group disabled" id="revoke-push">
+          <p><span>4</span>Disable push for this site</p>
+          <button disabled>Revoke Push Permissions</button>
+        </div>
+
+      </section>
+
+      <section class="error-container">
+        <h1 class="title">Ooops</h1>
+        <p class="message">Something went wrong</p>
+      </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
   </body>
 </html>
-
